@@ -9,4 +9,5 @@ jobs:
   happy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, Main"
+      - run: exit 1
+
