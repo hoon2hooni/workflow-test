@@ -2,7 +2,7 @@ name: "workflow run test"
 
 on:
   workflow_run:
-    workflows: main
+    workflows: "메인 [입니다]"
     branches: main
     types:
       - completed
@@ -22,3 +22,4 @@ jobs:
       - name: "test"
         run: |
           echo ${{ github.event.workflow_run.conclusion }}
+  
