@@ -3,7 +3,7 @@ name: "workflow run test"
 on:
   workflow_run:
     workflows: ["main"]
-    branches: main
+    branches: happy
     types:
       - completed
 
