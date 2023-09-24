@@ -2,8 +2,8 @@ name: "workflow run test"
 
 on:
   workflow_run:
-    workflows: ["main"]
-    branches: happy
+    workflows: main
+    branches: main
     types:
       - completed
 
@@ -13,4 +13,12 @@ jobs:
     steps:
       - name: "test"
         run: |
-          echo "test"
+          echo ${{ github.event.workflow_run.conclusion }}
+
+  test_its_okay:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "test"
+        run: |
+          echo ${{ github.event.workflow_run.conclusion }}
